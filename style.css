@@ -15,7 +15,6 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE. */
 
-
 * {
   margin: 0;
   padding: 0;
@@ -153,3 +152,25 @@ select {
   color: #ff5acd;
 }
 
+/* Support for tablet display aka resp */
+
+@media (max-width: 1129px) {
+  .todo-list {
+    width: 80%;
+  }
+  form {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+
+/* Support for mobile display aka responsive */
+@media (max-width: 500px) {
+  .todo-list {
+    width: 100%;
+  }
+  form {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
