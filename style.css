@@ -35,6 +35,7 @@ body {
 
 header {
   font-size: 2.5rem;
+  text-shadow: 5px 10px 10px rgba(177, 67, 67, 0.488);
 }
 
 header,
