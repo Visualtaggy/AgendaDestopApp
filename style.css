@@ -155,9 +155,9 @@ select {
 
 /* Support for tablet display aka resp */
 
-@media (max-width: 1129px) {
+@media (max-width: 1302px) {
   .todo-list {
-    width: 80%;
+    width: 40%;
   }
   form {
     display: flex;
@@ -166,7 +166,7 @@ select {
 }
 
 /* Support for mobile display aka responsive */
-@media (max-width: 500px) {
+@media (max-width: 700px) {
   .todo-list {
     width: 100%;
   }
