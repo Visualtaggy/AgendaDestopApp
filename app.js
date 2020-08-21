@@ -55,24 +55,34 @@ function addToDo(event) {
   todoInput.value = "";
 }
 
+//Delete To Do list
 function deleteCheck(event) {
+  //Checking where the user click
   const item = event.target;
   if (item.classList[0] === "trash-btn") {
     let trash = item.parentElement;
+    //Adding delete animations
     trash.classList.add("fall");
+    //Removing elements from user's local storage
     clearLocalStorage(trash);
+    //Actually deleting element once animation is complete
     trash.addEventListener("transitionend", function () {
       trash.remove();
     });
+    //Adding task complete animations
   } else if (item.classList[0] === "complete-btn") {
     let check = item.parentElement;
     check.classList.toggle("completed");
   }
 }
 
+//Filter to-do list based on task completed or uncompleted
 function filterList(event) {
+  // Storing all Li from the Ul
   const todos = todoList.childNodes;
+  //Looping over all the elements in the current to do list
   todos.forEach(function (todo) {
+    //Modifying Stylesheet to hide or show elements
     switch (event.target.value) {
       case "all":
         todo.style.display = "flex";
@@ -95,20 +105,24 @@ function filterList(event) {
   });
 }
 
+//For storing elements locally on clients machine
 function saveLocally(item) {
   let dataList;
+  //Standard check for existing data
   if (localStorage.getItem("dataList") === null) {
     dataList = [];
   } else {
     dataList = JSON.parse(localStorage.getItem("dataList"));
   }
-
+  // pushing new data
   dataList.push(item);
   localStorage.setItem("dataList", JSON.stringify(dataList));
 }
 
+//Updating UI once the browser reopens aka converting local data into actual to-do list
 function updateUI() {
   let dataList;
+  //Standard check for exisiting data
   if (localStorage.getItem("dataList") === null) {
     dataList = [];
   } else {
@@ -142,6 +156,7 @@ function updateUI() {
 
 function clearLocalStorage(element) {
   let dataList;
+  //Standard check for existing data
   if (localStorage.getItem("dataList") === null) {
     dataList = [];
   } else {
